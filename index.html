@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Psychology of Ramadan Fasting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1714;
+      --parchment: #f7f3ee;
+      --sand: #e8dfd3;
+      --crescent: #c4822a;
+      --crescent-light: #f0d9b8;
+      --muted: #7a6f65;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--parchment);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,243,238,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--sand);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--crescent); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--crescent);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--crescent);
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+    }
+    .hero-grant {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--sand);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+    }
+    .hero-grant a { color: var(--crescent); text-decoration: none; }
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .crescent-svg { width: 100%; max-width: 280px; opacity: 0.92; }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--crescent);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    /* ── FINDINGS GRID ── */
+    #findings { background: var(--white); }
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .findings-grid { grid-template-columns: 1fr; }
+    }
+    .finding-card {
+      background: var(--parchment);
+      border: 1px solid var(--sand);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .finding-card:hover {
+      border-color: var(--crescent-light);
+      transform: translateY(-2px);
+    }
+    .finding-icon { font-size: 1.5rem; margin-bottom: 0.85rem; }
+    .finding-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .finding-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── STUDIES ── */
+    #studies { background: var(--parchment); }
+    .studies-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .study-item {
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: 8px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      transition: border-color .2s;
+    }
+    .study-item:hover { border-color: var(--crescent-light); }
+    .study-year {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--crescent);
+      line-height: 1;
+      padding-top: 0.15rem;
+    }
+    .study-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+    .study-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2rem;
+      background: var(--crescent-light);
+      color: var(--crescent);
+    }
+    .study-item h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      letter-spacing: -0.01em;
+    }
+    .study-item p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .about-block h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .about-block p { font-size: 0.92rem; color: var(--muted); line-height: 1.72; margin-bottom: 0.75rem; }
+    .about-block a { color: var(--crescent); text-decoration: none; }
+    .about-block a:hover { text-decoration: underline; }
+
+    /* ── PUBLICATIONS ── */
+    #publications { background: var(--parchment); }
+    .pub-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .pub-item {
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      transition: border-color .2s;
+    }
+    .pub-item:hover { border-color: var(--crescent-light); }
+    .pub-content { flex: 1; }
+    .pub-authors { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.3rem; }
+    .pub-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
+    }
+    .pub-journal { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+    .pub-link { color: var(--crescent); text-decoration: none; font-style: normal; font-size: 0.82rem; }
+    .pub-link:hover { text-decoration: underline; }
+    .pub-status {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 2rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .status-published { background: #d4edda; color: #2d6a4f; }
+    .status-review { background: var(--crescent-light); color: #8a5c1a; }
+    .status-prep { background: var(--sand); color: var(--muted); }
+
+    /* ── TOOLS ── */
+    #tools { background: var(--white); }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.5rem;
+    }
+    .tool-card {
+      background: var(--parchment);
+      border: 1px solid var(--sand);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color .2s, transform .2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .tool-card:hover {
+      border-color: var(--crescent-light);
+      transform: translateY(-2px);
+    }
+    .tool-icon { font-size: 1.5rem; margin-bottom: 0.85rem; }
+    .tool-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .tool-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .tool-card .tool-link {
+      display: inline-block;
+      margin-top: 0.85rem;
+      font-size: 0.8rem;
+      color: var(--crescent);
+      font-weight: 500;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--parchment); }
+    .contact-box {
+      background: var(--ink);
+      color: var(--parchment);
+      border-radius: 12px;
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .contact-box h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .contact-box p { font-size: 0.92rem; color: #a89e95; line-height: 1.7; }
+    .contact-cta { display: flex; flex-direction: column; gap: 1rem; }
+    .cta-btn {
+      display: inline-block;
+      padding: 0.8rem 1.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      text-align: center;
+      transition: opacity .2s;
+    }
+    .cta-btn:hover { opacity: 0.85; }
+    .cta-primary { background: var(--crescent); color: var(--white); }
+    .cta-secondary { background: rgba(255,255,255,0.1); color: var(--parchment); border: 1px solid rgba(255,255,255,0.2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2rem;
+      text-align: center;
+    }
+    footer p { font-size: 0.8rem; color: #6b6059; line-height: 1.7; }
+    footer a { color: #a89e95; text-decoration: none; }
+    footer a:hover { color: var(--crescent-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; padding: 2rem; }
+      .study-item { grid-template-columns: 1fr; }
+      .study-year { font-size: 1.1rem; }
+      .pub-item { flex-direction: column; }
+      nav .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Ramadan &amp; Mind</a>
+    <ul class="nav-links">
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#studies">Studies</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Psychology · Cognition · Human Flourishing</p>
+    <h1>What does fasting<br/>do to the <em>mind?</em></h1>
+    <p class="hero-desc">
+      A research programme using Ramadan — one of the world's largest collective 
+      self-regulation exercises — as a natural laboratory for studying cognition, 
+      cooperation, and human flourishing.
+    </p>
+    <span class="hero-grant">
+      Funded by the
+      <a href="https://doi.org/10.54224/30295" target="_blank" rel="noopener">Templeton World Charity Foundation · Grant #30295</a>
+    </span>
+  </div>
+  <div class="hero-visual">
+    <svg class="crescent-svg" viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="rg1" cx="40%" cy="40%" r="65%">
+          <stop offset="0%" stop-color="#f0d9b8"/>
+          <stop offset="100%" stop-color="#c4822a" stop-opacity="0.3"/>
+        </radialGradient>
+      </defs>
+      <!-- outer circle -->
+      <circle cx="155" cy="160" r="110" fill="url(#rg1)" opacity="0.35"/>
+      <!-- crescent shape: big circle minus offset circle -->
+      <path d="M155 55 
+               A105 105 0 1 1 154.99 55
+               M155 55 
+               A105 105 0 1 0 154.99 55" fill="none"/>
+      <circle cx="155" cy="160" r="105" fill="#c4822a" opacity="0.18"/>
+      <circle cx="195" cy="145" r="88" fill="#f7f3ee"/>
+      <!-- stars -->
+      <circle cx="225" cy="95" r="3.5" fill="#c4822a" opacity="0.7"/>
+      <circle cx="240" cy="120" r="2" fill="#c4822a" opacity="0.5"/>
+      <circle cx="210" cy="75" r="2.5" fill="#c4822a" opacity="0.6"/>
+      <!-- thin ring -->
+      <circle cx="155" cy="160" r="105" stroke="#c4822a" stroke-width="1" fill="none" opacity="0.25"/>
+    </svg>
+  </div>
+</div>
+
+<!-- FINDINGS -->
+<section id="findings">
+  <div class="section-inner">
+    <p class="section-label">Key findings</p>
+    <h2 class="section-title">What the research shows</h2>
+    <p class="section-sub">Across five studies spanning cognition, cooperation, and measurement, a consistent picture emerges of fasting as a psychologically rich, socially embedded practice.</p>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <div class="finding-icon">🧠</div>
+        <h3>Inhibitory control improves</h3>
+        <p>Ramadan participants show greater gains in inhibitory control accuracy over the month compared to controls — improvements moderated by trait self-control, suggesting motivation shapes practice effects.</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-icon">🤝</div>
+        <h3>Cooperation is context-dependent</h3>
+        <p>Ritual participation alone does not increase generosity. When fasting is made psychologically salient, Ramadan participants give more to anonymous others. When group identities are foregrounded, giving becomes parochial.</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-icon">🎲</div>
+        <h3>Risk-aversion increases</h3>
+        <p>Fasting participants show reduced preference for risky choices, consistent with engagement of self-regulatory cognitive processes that overlap with impulse control.</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-icon">💡</div>
+        <h3>Motives matter more than hunger</h3>
+        <p>Cognitive and behavioural effects are not explained by caloric restriction or hunger alone. Values, beliefs about willpower, and motivational orientation play a stronger role.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STUDIES -->
+<section id="studies">
+  <div class="section-inner">
+    <p class="section-label">Research</p>
+    <h2 class="section-title">The studies</h2>
+    <p class="section-sub">Five longitudinal studies using experimental and observational designs, conducted between 2017 and 2025.</p>
+    <div class="studies-list">
+
+      <div class="study-item">
+        <div class="study-year">2022</div>
+        <div>
+          <div class="study-meta">
+            <span class="study-tag">Cognition</span>
+            <span class="study-tag">Longitudinal</span>
+            <span class="study-tag">Published</span>
+          </div>
+          <h3>Temporary self-deprivation can impair cognitive control: evidence from the Ramadan fast</h3>
+          <p>A randomised longitudinal study tracking inhibitory control before, during, and after Ramadan. Food-reminder probes during Ramadan impaired response accuracy and speed in fasters but not controls. Published in <em>Personality and Social Psychology Bulletin</em> (<a href="https://doi.org/10.1177/01461672221103935" target="_blank" rel="noopener">doi.org/10.1177/01461672221103935</a>).</p>
+        </div>
+      </div>
+
+      <div class="study-item">
+        <div class="study-year">2023</div>
+        <div>
+          <div class="study-meta">
+            <span class="study-tag">Motivation</span>
+            <span class="study-tag">Survey</span>
+            <span class="study-tag">Published</span>
+          </div>
+          <h3>Ramadan fasting as a goal-pursuit: why people fast, and how motives affect their experience</h3>
+          <p>Examines why people undertake Ramadan fasting and how different motivational orientations — autonomous vs. controlled — shape the psychological experience of the fast. Published in <em>Motivation Science</em>, 9(4), 327–339 · <a href="https://doi.org/10.1037/mot0000310" target="_blank" rel="noopener">doi.org/10.1037/mot0000310</a>.</p>
+        </div>
+      </div>
+
+      <div class="study-item">
+        <div class="study-year">2023</div>
+        <div>
+          <div class="study-meta">
+            <span class="study-tag">Risk</span>
+            <span class="study-tag">Cooperation</span>
+            <span class="study-tag">Published</span>
+          </div>
+          <h3>From self-deprivation to cooperation: how Ramadan fasting influences risk-aversion and decisions in resource dilemmas</h3>
+          <p>Examines whether a month of collective self-deprivation reduces risk tolerance and increases cooperative behaviour in anonymous resource dilemmas. Published in <em>Current Research in Ecological and Social Psychology</em> (<a href="https://doi.org/10.1016/j.cresp.2023.100152" target="_blank" rel="noopener">doi.org/10.1016/j.cresp.2023.100152</a>).</p>
+        </div>
+      </div>
+
+      <div class="study-item">
+        <div class="study-year">2025</div>
+        <div>
+          <div class="study-meta">
+            <span class="study-tag">Inhibitory Control</span>
+            <span class="study-tag">Longitudinal</span>
+            <span class="study-tag">Published</span>
+          </div>
+          <h3>Self-deprivation and cognition in Ramadan: could fasting practice improve inhibitory control?</h3>
+          <p>A three-wave difference-in-difference study tracking reaction time and accuracy on an inhibitory control task alongside beliefs about self-control. Ramadan participants showed greater accuracy gains than controls, moderated by trait self-control. Published in <em>Religion, Brain &amp; Behavior</em> (June 2025 · <a href="https://doi.org/10.1080/2153599X.2025.2487277" target="_blank" rel="noopener">doi.org/10.1080/2153599X.2025.2487277</a>).</p>
+        </div>
+      </div>
+
+      <div class="study-item">
+        <div class="study-year">2025</div>
+        <div>
+          <div class="study-meta">
+            <span class="study-tag">Prosociality</span>
+            <span class="study-tag">Longitudinal</span>
+            <span class="study-tag">Under review</span>
+          </div>
+          <h3>When private rituals become public in mind: the shifting prosocial scope of Ramadan</h3>
+          <p>Three longitudinal Dictator Game studies (2023–2025) testing whether private ritual participation promotes generosity. Fasting salience — not fasting itself — drove increased giving; explicit group identity cues produced parochialism. Under review · <a href="https://drive.google.com/file/d/1foqxBQsUogb0teWuNTL_oQfveROHmIAm/view?usp=sharing" target="_blank" rel="noopener">Preprint</a>.</p>
+        </div>
+      </div>
+
+      <div class="study-item">
+        <div class="study-year">2025</div>
+        <div>
+          <div class="study-meta">
+            <span class="study-tag">Wearables</span>
+            <span class="study-tag">Methods</span>
+            <span class="study-tag">Under review</span>
+          </div>
+          <h3>Wearable device data collection from existing device owners via crowdsourcing platforms: a feasibility study using Jamasp</h3>
+          <p>Introduces Jamasp, an end-to-end platform integrating Fitbit with Prolific for scalable physiological data collection. Pilot study with N = 41 participants over 65 days demonstrated high data completeness across heart rate, sleep, and activity streams. Under review · <a href="https://docs.google.com/document/d/1Z13xEMe-RGqervhmDNtwkO6dxHBnf07L7Zi_4ncNEWQ/edit?usp=sharing" target="_blank" rel="noopener">Preprint</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About the project</p>
+    <h2 class="section-title">Why Ramadan?</h2>
+    <p class="section-sub">An annual, large-scale, self-regulated practice carried out by hundreds of millions of people makes Ramadan one of the most powerful natural experiments available to behavioural science.</p>
+    <div class="about-grid">
+      <div>
+        <div class="about-block">
+          <h3>The scientific opportunity</h3>
+          <p>Most fasting research focuses on caloric restriction and health outcomes. The psychological, behavioural, and social dimensions of voluntary collective fasting remain largely unstudied — particularly in non-WEIRD populations.</p>
+          <p>Ramadan offers a strict, standardised protocol followed by a large, multicultural population, providing an unparalleled opportunity to study self-regulation, cognitive control, and social behaviour under real-world conditions.</p>
+        </div>
+        <div class="about-block">
+          <h3>Principal investigator</h3>
+          <p>Mostafa Salari Rad, Department of Psychology, The New School for Social Research, New York. Research interests include cultural psychology, self-regulation, religion, and behavioural measurement.</p>
+
+        </div>
+      </div>
+      <div>
+        <div class="about-block">
+          <h3>Funding &amp; ethics</h3>
+          <p>This research is funded by the <a href="https://doi.org/10.54224/30295" target="_blank" rel="noopener">Templeton World Charity Foundation (Grant #30295)</a>. The funder played no role in study design, data collection, analysis, or interpretation.</p>
+          <p>Studies were conducted under approved protocols from the Institutional Review Board of The New School for Social Research and deemed exempt from full review.</p>
+        </div>
+        <div class="about-block">
+          <h3>Approach</h3>
+          <p>All studies use longitudinal, multi-wave designs with Ramadan participants and naive controls recruited through Prolific. Experimental tasks assess inhibitory control, risk preferences, and prosocial decision-making before, during, and after the fast.</p>
+          <p>Wearable device data (heart rate, sleep, activity) are integrated where available to extend measurement beyond self-report and laboratory tasks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-inner">
+    <p class="section-label">Tools &amp; resources</p>
+    <h2 class="section-title">Open science outputs</h2>
+    <p class="section-sub">Platforms, datasets, and experimental infrastructure developed as part of this project.</p>
+    <div class="tools-grid">
+
+      <a class="tool-card" href="https://jamasp.app" target="_blank" rel="noopener">
+        <div class="tool-icon">⌚</div>
+        <h3>Jamasp</h3>
+        <p>End-to-end platform for wearable research via Fitbit and Prolific. Handles consent, OAuth device linking, automated data retrieval, and structured storage in Google BigQuery.</p>
+        <span class="tool-link">jamasp.app →</span>
+      </a>
+
+      <a class="tool-card" href="https://github.com/cutsocial/lens" target="_blank" rel="noopener">
+        <div class="tool-icon">🔬</div>
+        <h3>Lens</h3>
+        <p>Open-source experimental task platform used to administer behavioural tasks (Dictator Game, inhibitory control) across longitudinal waves via browser.</p>
+        <span class="tool-link">github.com/cutsocial/lens →</span>
+      </a>
+
+      <a class="tool-card" href="https://github.com/cutsocial/jamasp-public" target="_blank" rel="noopener">
+        <div class="tool-icon">💾</div>
+        <h3>Data &amp; code</h3>
+        <p>Anonymised aggregate data, BigQuery SQL queries, and database schema from the Jamasp pilot are publicly available on GitHub.</p>
+        <span class="tool-link">github.com/cutsocial/jamasp-public →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-box">
+      <div>
+        <h2>Collaborate or learn more</h2>
+        <p>Whether you're a researcher, journalist, or employer interested in accommodating fasting employees — we'd like to hear from you.</p>
+      </div>
+      <div class="contact-cta">
+        <a href="#" class="cta-btn cta-primary">Get in touch</a>
+        <a href="https://doi.org/10.54224/30295" target="_blank" rel="noopener" class="cta-btn cta-secondary">View grant page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    Funded by the <a href="https://doi.org/10.54224/30295" target="_blank" rel="noopener">Templeton World Charity Foundation</a> (Grant #30295).
+    The funder had no role in study design, data collection, analysis, or interpretation.
+    &nbsp;·&nbsp; © 2025 Mostafa Salari Rad
+  </p>
+</footer>
+
+</body>
+</html>
